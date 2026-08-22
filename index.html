@@ -11,7 +11,31 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-400 selection:text-slate-950">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-400 selection:text-slate-950 relative">
+
+  <!-- Welcome Pop-Up Modal -->
+  <div id="welcome-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm transition-opacity duration-300">
+    <div class="bg-slate-900 border border-amber-400/30 rounded-2xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative text-center">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      <div class="w-12 h-12 bg-amber-400/10 text-amber-400 rounded-full flex items-center justify-center mx-auto mb-4 border border-amber-400/20">
+        <i data-lucide="map-pin" class="w-6 h-6"></i>
+      </div>
+      <h3 class="text-2xl font-bold text-white mb-2">Welcome to The Local Signal! 📍</h3>
+      <p class="text-slate-300 text-sm mb-6 leading-relaxed">
+        Looking to get your business listed at the top of Google Maps in your area?
+      </p>
+      <div class="text-left bg-slate-950 p-4 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2 mb-6">
+        <p class="flex items-center"><i data-lucide="sparkles" class="w-4 h-4 text-amber-400 mr-2 flex-shrink-0"></i> <strong>Instant Local SEO Audit:</strong> Try our built-in AI Assistant to scan profile opportunities.</p>
+        <p class="flex items-center"><i data-lucide="message-square" class="w-4 h-4 text-amber-400 mr-2 flex-shrink-0"></i> <strong>Direct Consultation:</strong> Connect directly on WhatsApp for custom strategy.</p>
+      </div>
+      <a href="https://wa.me/917799423794?text=Hi%2C%20I%20want%20to%20grow%20my%20business%20on%20Google%20Maps" target="_blank" onclick="closeModal()" class="w-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold py-3.5 rounded-xl transition-all flex items-center justify-center space-x-2 text-sm shadow-lg shadow-amber-400/10">
+        <i data-lucide="message-circle" class="w-5 h-5"></i>
+        <span>Chat with Us on WhatsApp</span>
+      </a>
+    </div>
+  </div>
 
   <!-- Navigation -->
   <nav class="sticky top-0 z-40 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
@@ -26,7 +50,7 @@
         </div>
       </div>
       <div class="hidden md:flex space-x-6 text-sm font-medium text-slate-300">
-        <a href="#services" class="hover:text-amber-400 transition-colors">Services</a>
+        <a href="#about" class="hover:text-amber-400 transition-colors">About Us</a>
         <a href="#pricing" class="hover:text-amber-400 transition-colors">Pricing</a>
         <a href="#ask-maps" class="hover:text-amber-400 transition-colors">AI Audit</a>
         <a href="#contact" class="hover:text-amber-400 transition-colors">Contact</a>
@@ -46,10 +70,10 @@
         <span>Verified Google Maps India Record Since 2007</span>
       </div>
       <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight max-w-4xl mx-auto leading-tight">
-        Dominate <span class="text-amber-400">Google Maps</span> & Drive High-Intent Local Customers
+        Dominate Local Search & Turn <span class="text-amber-400">Google Maps</span> into Your #1 Sales Channel
       </h1>
-      <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-normal">
-        We bring local businesses directly to the top of search results — turning online visibility into daily phone calls, store walk-ins, and ready-to-buy leads.
+      <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-3xl mx-auto font-normal leading-relaxed">
+        Welcome to <strong>The Local Signal</strong>. Built on a proven Google Maps India track record dating back to the 2007 pilot batch, we help local businesses secure top search rankings, drive daily walk-ins, and convert high-intent customers ready to buy.
       </p>
 
       <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
@@ -61,6 +85,19 @@
           <i data-lucide="phone-call" class="w-5 h-5"></i>
           <span>Get Free Consultation</span>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-16 bg-slate-900/50 border-t border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
+      <div class="bg-slate-900 border border-slate-800 p-8 sm:p-10 rounded-2xl shadow-xl">
+        <div class="inline-block px-3 py-1 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-bold uppercase rounded-md mb-4">About Us</div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">Proven Local Expertise Since 2007</h2>
+        <p class="text-slate-300 text-base leading-relaxed">
+          At <strong>The Local Signal</strong>, we specialize in transforming standard map listings into revenue-generating assets for local businesses. Leveraging deep experience in Google's ecosystem, we deliver data-backed local SEO, AI-powered growth tools, 360° virtual visual tours, and high-converting ad campaigns designed to generate measurable calls, store visits, and direct WhatsApp leads.
+        </p>
       </div>
     </div>
   </section>
@@ -264,6 +301,11 @@
     // Initialize Lucide Icons
     lucide.createIcons();
 
+    // Modal Control
+    function closeModal() {
+      document.getElementById('welcome-modal').classList.add('hidden');
+    }
+
     // Simulated AI Maps Audit
     function handleAiQuery(e) {
       e.preventDefault();
@@ -289,7 +331,7 @@
       const phone = document.getElementById('lead-phone').value;
       const service = document.getElementById('lead-service').value;
 
-      const message = `Hi! New Lead Details:%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}\%0AService Requested:${encodeURIComponent(service)}`;
+      const message = `Hi! New Lead Details:%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AService Requested: ${encodeURIComponent(service)}`;
       window.open(`https://wa.me/917799423794?text=${message}`, '_blank');
     }
   </script>
