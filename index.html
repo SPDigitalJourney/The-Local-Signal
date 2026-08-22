@@ -11,27 +11,53 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-400 selection:text-slate-950">
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-amber-400 selection:text-slate-950 pb-20 md:pb-0">
+
+  <!-- Welcome Pop-Up Modal -->
+  <div id="welcome-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm transition-opacity duration-300">
+    <div class="bg-slate-900 border border-amber-400/30 rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative text-center">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors p-2">
+        <i data-lucide="x" class="w-6 h-6"></i>
+      </button>
+      
+      <img src="logo.png" alt="The Local Signal Logo" class="w-20 h-20 rounded-full mx-auto mb-4 border-2 border-amber-400 shadow-lg object-cover">
+      
+      <h3 class="text-2xl font-bold text-white mb-2">Welcome to The Local Signal! 📍</h3>
+      <p class="text-slate-300 text-xs sm:text-sm mb-6 leading-relaxed">
+        Looking to get your business listed at the top of Google Maps in your local area?
+      </p>
+      
+      <div class="text-left bg-slate-950 p-4 rounded-2xl border border-slate-800 text-xs text-slate-300 space-y-2 mb-6">
+        <p class="flex items-center"><i data-lucide="sparkles" class="w-4 h-4 text-amber-400 mr-2 flex-shrink-0"></i> <strong>Instant Local SEO Audit:</strong> Try our built-in AI Assistant below.</p>
+        <p class="flex items-center"><i data-lucide="message-square" class="w-4 h-4 text-amber-400 mr-2 flex-shrink-0"></i> <strong>Direct Consultation:</strong> Connect directly on WhatsApp for custom strategies.</p>
+      </div>
+      
+      <a href="https://wa.me/917799423794?text=Hi%2C%20I%20want%20to%20grow%20my%20business%20on%20Google%20Maps" target="_blank" onclick="closeModal()" class="w-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold py-3.5 rounded-xl transition-all flex items-center justify-center space-x-2 text-sm shadow-lg shadow-amber-400/20">
+        <i data-lucide="message-circle" class="w-5 h-5"></i>
+        <span>Chat with Us on WhatsApp</span>
+      </a>
+    </div>
+  </div>
 
   <!-- Navigation -->
-  <nav class="sticky top-0 z-40 bg-slate-900/80 backdrop-blur-md border-b border-slate-800">
+  <nav class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
       <div class="flex items-center space-x-3">
-        <div class="w-10 h-10 rounded-full bg-amber-400 flex items-center justify-center text-slate-950 font-black text-xl shadow-lg shadow-amber-400/20">
-          📍
-        </div>
+        <img src="logo.png" alt="The Local Signal Logo" class="w-10 h-10 rounded-full border border-amber-400/50 object-cover">
         <div>
-          <span class="text-lg font-bold tracking-tight text-white block leading-tight">THE LOCAL SIGNAL</span>
-          <span class="text-[10px] text-amber-400 uppercase tracking-widest font-semibold block">Local SEO Discoveries</span>
+          <span class="text-base sm:text-lg font-bold tracking-tight text-white block leading-tight">THE LOCAL SIGNAL</span>
+          <span class="text-[9px] sm:text-[10px] text-amber-400 uppercase tracking-widest font-semibold block">Local SEO Discoveries</span>
         </div>
       </div>
+      
       <div class="hidden md:flex space-x-6 text-sm font-medium text-slate-300">
-        <a href="#services" class="hover:text-amber-400 transition-colors">Services</a>
-        <a href="#pricing" class="hover:text-amber-400 transition-colors">Pricing</a>
+        <a href="#about" class="hover:text-amber-400 transition-colors">About Us</a>
+        <a href="#pricing" class="hover:text-amber-400 transition-colors">Packages</a>
         <a href="#ask-maps" class="hover:text-amber-400 transition-colors">AI Audit</a>
         <a href="#contact" class="hover:text-amber-400 transition-colors">Contact</a>
       </div>
-      <a href="https://wa.me/917799423794?text=Hi%2C%20I%20want%20to%20grow%20my%20business%20on%20Google%20Maps" target="_blank" class="bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-4 py-2 rounded-full text-sm transition-all flex items-center space-x-2 shadow-md hover:shadow-amber-400/20">
+
+      <a href="https://wa.me/917799423794?text=Hi%2C%20I%20want%20to%20grow%20my%20business%20on%20Google%20Maps" target="_blank" class="hidden sm:flex bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-4 py-2 rounded-full text-sm transition-all items-center space-x-2 shadow-md hover:shadow-amber-400/20">
         <i data-lucide="message-square" class="w-4 h-4"></i>
         <span>WhatsApp Now</span>
       </a>
@@ -39,28 +65,88 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="relative py-20 lg:py-28 overflow-hidden bg-gradient-to-b from-slate-900 to-slate-950">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-      <div class="inline-flex items-center space-x-2 bg-amber-400/10 border border-amber-400/30 text-amber-400 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
-        <i data-lucide="award" class="w-4 h-4"></i>
-        <span>Verified Google Maps India Record Since 2007</span>
-      </div>
-      <h1 class="text-4xl sm:text-6xl font-black text-white tracking-tight max-w-4xl mx-auto leading-tight">
-        Dominate <span class="text-amber-400">Google Maps</span> & Drive High-Intent Local Customers
-      </h1>
-      <p class="mt-6 text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto font-normal">
-        We bring local businesses directly to the top of search results — turning online visibility into daily phone calls, store walk-ins, and ready-to-buy leads.
-      </p>
+  <section class="relative py-12 lg:py-20 overflow-hidden bg-gradient-to-b from-slate-900 to-slate-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Text Content -->
+        <div class="lg:col-span-7 text-center lg:text-left">
+          <div class="inline-flex items-center space-x-2 bg-amber-400/10 border border-amber-400/30 text-amber-400 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+            <i data-lucide="award" class="w-4 h-4"></i>
+            <span>Google Maps India Track Record Since 2007</span>
+          </div>
+          
+          <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+            Dominate Local Search & Turn <span class="text-amber-400">Google Maps</span> into Your #1 Sales Channel
+          </h1>
+          
+          <p class="mt-4 sm:mt-6 text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+            Welcome to <strong>The Local Signal</strong>. Built on a verified Google Maps India track record dating back to the 2007 pilot batch, we help local businesses secure top search rankings, drive daily walk-ins, and convert high-intent customers ready to buy.
+          </p>
 
-      <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
-        <a href="#ask-maps" class="bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-8 py-4 rounded-xl shadow-lg transition-all flex items-center justify-center space-x-2 text-base">
-          <i data-lucide="sparkles" class="w-5 h-5"></i>
-          <span>Ask AI Maps Assistant</span>
-        </a>
-        <a href="#lead-form" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-8 py-4 rounded-xl border border-slate-700 transition-all flex items-center justify-center space-x-2 text-base">
-          <i data-lucide="phone-call" class="w-5 h-5"></i>
-          <span>Get Free Consultation</span>
-        </a>
+          <div class="mt-8 flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+            <a href="#pricing" class="bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-8 py-4 rounded-2xl shadow-lg transition-all flex items-center justify-center space-x-2 text-base">
+              <i data-lucide="compass" class="w-5 h-5"></i>
+              <span>Explore Growth Packages</span>
+            </a>
+            <a href="#ask-maps" class="bg-slate-900 hover:bg-slate-800 text-white font-semibold px-8 py-4 rounded-2xl border border-slate-700 transition-all flex items-center justify-center space-x-2 text-base">
+              <i data-lucide="sparkles" class="w-5 h-5 text-amber-400"></i>
+              <span>Free AI Maps Audit</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Hero Mockup Image Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-full max-w-md bg-slate-900 border border-slate-800 rounded-3xl p-6 shadow-2xl overflow-hidden">
+            <div class="absolute -top-12 -right-12 w-40 h-40 bg-amber-400/10 rounded-full blur-2xl"></div>
+            
+            <div class="flex items-center space-x-4 mb-6 pb-4 border-b border-slate-800">
+              <img src="logo.png" alt="The Local Signal" class="w-16 h-16 rounded-full border-2 border-amber-400 shadow-md object-cover">
+              <div>
+                <h4 class="text-lg font-bold text-white leading-snug">The Local Signal</h4>
+                <p class="text-xs text-amber-400 font-medium">Local SEO & Maps Acceleration</p>
+                <div class="flex items-center text-amber-400 text-xs mt-1">
+                  ★★★★★ <span class="text-slate-400 ml-1 text-[11px]">(2007 Pilot Batch Proven)</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Badges -->
+            <div class="space-y-3">
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center justify-between text-xs">
+                <span class="text-slate-300 flex items-center"><i data-lucide="trending-up" class="w-4 h-4 text-emerald-400 mr-2"></i> Rank 3-Pack Visibility</span>
+                <span class="text-emerald-400 font-bold">+280% Calls</span>
+              </div>
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center justify-between text-xs">
+                <span class="text-slate-300 flex items-center"><i data-lucide="camera" class="w-4 h-4 text-amber-400 mr-2"></i> 360° Virtual Shoot</span>
+                <span class="text-amber-400 font-bold">Verified HD</span>
+              </div>
+              <div class="bg-slate-950 p-3 rounded-xl border border-slate-800 flex items-center justify-between text-xs">
+                <span class="text-slate-300 flex items-center"><i data-lucide="message-square" class="w-4 h-4 text-sky-400 mr-2"></i> WhatsApp Funnel</span>
+                <span class="text-sky-400 font-bold">Auto Lead Route</span>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-800 text-center">
+              <span class="text-[11px] text-slate-400">Direct Contact: <strong>+91 7799423794</strong></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-16 bg-slate-900/50 border-t border-slate-800">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-slate-900 border border-slate-800 p-8 sm:p-10 rounded-3xl shadow-xl">
+        <div class="inline-block px-3 py-1 bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-bold uppercase rounded-md mb-4">About Us</div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4">Proven Local Expertise Since 2007</h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          At <strong>The Local Signal</strong>, we specialize in transforming standard map listings into revenue-generating assets for local businesses. Leveraging deep experience in Google's ecosystem, we deliver data-backed local SEO, AI-powered growth tools, 360° virtual visual tours, and high-converting ad campaigns designed to generate measurable calls, store visits, and direct WhatsApp leads.
+        </p>
       </div>
     </div>
   </section>
@@ -68,26 +154,26 @@
   <!-- Interactive AI "Ask Maps" Tool -->
   <section id="ask-maps" class="py-16 bg-slate-900 border-y border-slate-800">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-slate-950 border border-amber-400/20 rounded-2xl p-6 sm:p-8 shadow-2xl">
+      <div class="bg-slate-950 border border-amber-400/20 rounded-3xl p-6 sm:p-8 shadow-2xl">
         <div class="flex items-center space-x-3 mb-4">
-          <div class="p-2 bg-amber-400/10 rounded-lg text-amber-400">
+          <div class="p-2 bg-amber-400/10 rounded-xl text-amber-400">
             <i data-lucide="bot" class="w-6 h-6"></i>
           </div>
           <div>
             <h3 class="text-xl font-bold text-white">Ask Maps AI Audit Assistant</h3>
-            <p class="text-xs text-slate-400">Get instant local SEO insights for your business</p>
+            <p class="text-xs text-slate-400">Get instant local SEO insights for your business profile</p>
           </div>
         </div>
 
-        <div id="chat-window" class="bg-slate-900 border border-slate-800 rounded-xl p-4 h-48 overflow-y-auto mb-4 space-y-3 text-sm">
-          <div class="bg-slate-800/80 p-3 rounded-lg text-slate-300 max-w-[85%]">
-            🤖 <strong>AI Assistant:</strong> Hi there! Enter your business name and city below, and I'll analyze your Google Maps growth opportunities.
+        <div id="chat-window" class="bg-slate-900 border border-slate-800 rounded-2xl p-4 h-48 overflow-y-auto mb-4 space-y-3 text-sm">
+          <div class="bg-slate-800/80 p-3 rounded-xl text-slate-300 max-w-[85%]">
+            🤖 <strong>AI Assistant:</strong> Hi there! Enter your business name and location below, and I'll analyze your Google Maps growth opportunities.
           </div>
         </div>
 
-        <form id="ai-form" onsubmit="handleAiQuery(event)" class="flex gap-2">
+        <form id="ai-form" onsubmit="handleAiQuery(event)" class="flex flex-col sm:flex-row gap-2">
           <input type="text" id="ai-input" placeholder="e.g. Apex Fitness, Secunderabad" required class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-400">
-          <button type="submit" class="bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition-all flex items-center space-x-2">
+          <button type="submit" class="bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold px-6 py-3 rounded-xl text-sm transition-all flex items-center justify-center space-x-2">
             <span>Analyze</span>
             <i data-lucide="send" class="w-4 h-4"></i>
           </button>
@@ -96,109 +182,127 @@
     </div>
   </section>
 
-  <!-- Product & Pricing Cards -->
+  <!-- Expanded Product & Pricing Cards -->
   <section id="pricing" class="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
-      <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Our Local Growth Packages</h2>
-      <p class="mt-3 text-slate-400">Tailored solutions to establish, optimize, and scale your local presence.</p>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white">Our Complete Service Packages</h2>
+      <p class="mt-3 text-slate-400 text-sm sm:text-base max-w-2xl mx-auto">Transparent pricing designed to setup, verify, optimize, and scale your local business online.</p>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
       
       <!-- GBP Basic -->
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-400/50 transition-all">
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-amber-400/50 transition-all">
         <div>
-          <span class="text-xs font-semibold text-amber-400 uppercase tracking-widest">Essential</span>
-          <h3 class="text-xl font-bold text-white mt-1">Google Business Profile - Basic</h3>
+          <span class="text-[10px] font-extrabold text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full uppercase tracking-wider">Foundation</span>
+          <h3 class="text-xl font-bold text-white mt-3">Google Business Profile - Basic</h3>
           <p class="text-3xl font-black text-white mt-4">₹3,000</p>
-          <ul class="mt-6 space-y-3 text-sm text-slate-300">
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Set up & Verification</li>
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Phone & WhatsApp Verification</li>
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Profile Optimisation</li>
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Review Management</li>
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> AI Implementation</li>
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Digital Catalogue & Social Connect</li>
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Google Official QR Code</li>
+          <p class="text-xs text-slate-400 mt-1 mb-6">Complete profile setup & primary verification package.</p>
+          
+          <ul class="space-y-3 text-sm text-slate-300 border-t border-slate-800 pt-6">
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Set up & Verification Support</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Phone No. & WhatsApp Verification</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Profile Optimisation & Geo-Tagging</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Review Management & Response Strategy</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> AI Implementation for Local Signals</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Digital Product/Service Catalogue</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Social Media Account Connect</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Official Standee-Ready Google QR Code</li>
           </ul>
         </div>
-        <a href="https://wa.me/917799423794?text=Hi%2C%20I%20am%20interested%20in%20Google%20Business%20Profile%20Basic%20(%E2%82%B93000)" target="_blank" class="mt-8 bg-slate-800 hover:bg-amber-400 hover:text-slate-950 text-white font-bold py-3 rounded-xl transition-all text-center text-sm block">Book Package</a>
+        <a href="https://wa.me/917799423794?text=Hi%2C%20I%20am%20interested%20in%20Google%20Business%20Profile%20Basic%20(%E2%82%B93000)" target="_blank" class="mt-8 bg-slate-800 hover:bg-amber-400 hover:text-slate-950 text-white font-bold py-3.5 rounded-xl transition-all text-center text-sm block">Book GBP Basic</a>
       </div>
 
       <!-- Photoshoot Basic -->
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-400/50 transition-all">
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-amber-400/50 transition-all">
         <div>
-          <span class="text-xs font-semibold text-amber-400 uppercase tracking-widest">Visuals</span>
-          <h3 class="text-xl font-bold text-white mt-1">Google Photoshoot - Basic</h3>
+          <span class="text-[10px] font-extrabold text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full uppercase tracking-wider">Visual Coverage</span>
+          <h3 class="text-xl font-bold text-white mt-3">Google Photoshoot - Basic</h3>
           <p class="text-3xl font-black text-white mt-4">₹3,000</p>
-          <ul class="mt-6 space-y-3 text-sm text-slate-300">
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> 360 Videos</li>
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> High Definition Photos</li>
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Production & Publish on Google</li>
+          <p class="text-xs text-slate-400 mt-1 mb-6">Essential visual capture to boost search trust.</p>
+
+          <ul class="space-y-3 text-sm text-slate-300 border-t border-slate-800 pt-6">
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> 360-Degree Virtual Walkthrough Video</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> High-Definition Interior & Exterior Photography</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> On-Site Production & HD Editing</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Geo-Tagged Publishing directly to Google Maps</li>
           </ul>
         </div>
-        <a href="https://wa.me/917799423794?text=Hi%2C%20I%20am%20interested%20in%20Google%20Photoshoot%20Basic%20(%E2%82%B93000)" target="_blank" class="mt-8 bg-slate-800 hover:bg-amber-400 hover:text-slate-950 text-white font-bold py-3 rounded-xl transition-all text-center text-sm block">Book Package</a>
+        <a href="https://wa.me/917799423794?text=Hi%2C%20I%20am%20interested%20in%20Google%20Photoshoot%20Basic%20(%E2%82%B93000)" target="_blank" class="mt-8 bg-slate-800 hover:bg-amber-400 hover:text-slate-950 text-white font-bold py-3.5 rounded-xl transition-all text-center text-sm block">Book Basic Photoshoot</a>
       </div>
 
       <!-- Photoshoot Premium -->
-      <div class="bg-slate-900 border-2 border-amber-400 rounded-2xl p-6 flex flex-col justify-between shadow-xl relative">
-        <span class="absolute -top-3 right-6 bg-amber-400 text-slate-950 text-[10px] font-black uppercase px-3 py-1 rounded-full">Most Popular</span>
+      <div class="bg-slate-900 border-2 border-amber-400 rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative">
+        <span class="absolute -top-3.5 right-6 bg-amber-400 text-slate-950 text-[10px] font-black uppercase px-4 py-1 rounded-full tracking-wider">Best Value</span>
         <div>
-          <span class="text-xs font-semibold text-amber-400 uppercase tracking-widest">Complete Coverage</span>
-          <h3 class="text-xl font-bold text-white mt-1">Google Photoshoot - Premium</h3>
+          <span class="text-[10px] font-extrabold text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full uppercase tracking-wider">Complete Property Shoot</span>
+          <h3 class="text-xl font-bold text-white mt-3">Google Photoshoot - Premium</h3>
           <p class="text-3xl font-black text-white mt-4">₹9,999</p>
-          <ul class="mt-6 space-y-3 text-sm text-slate-300">
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Complete Property 360 Video</li>
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> High Definition Photos</li>
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Production & Publish on Google</li>
-            <li class="flex items-center font-bold text-amber-400"><i data-lucide="gift" class="w-4 h-4 mr-2"></i> FREE 30-Day Local SEO & Optimisation</li>
+          <p class="text-xs text-slate-400 mt-1 mb-6">Full campus/store coverage with complementary SEO.</p>
+
+          <ul class="space-y-3 text-sm text-slate-300 border-t border-slate-800 pt-6">
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Complete Property 360-Degree Video Shoot</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Ultra-HD Professional Photography Package</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> End-to-End Post Production & Publishing</li>
+            <li class="flex items-start font-bold text-amber-400"><i data-lucide="gift" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i> FREE 30-Day Complementary Local SEO</li>
+            <li class="flex items-start font-bold text-amber-400"><i data-lucide="check-circle-2" class="w-4 h-4 mr-2 mt-0.5 flex-shrink-0"></i> Profile Optimisation & Ranking Push Included</li>
           </ul>
         </div>
-        <a href="https://wa.me/917799423794?text=Hi%2C%20I%20am%20interested%20in%20Google%20Photoshoot%20Premium%20(%E2%82%B99999)" target="_blank" class="mt-8 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold py-3 rounded-xl transition-all text-center text-sm block">Book Package</a>
+        <a href="https://wa.me/917799423794?text=Hi%2C%20I%20am%20interested%20in%20Google%20Photoshoot%20Premium%20(%E2%82%B99999)" target="_blank" class="mt-8 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold py-3.5 rounded-xl transition-all text-center text-sm block shadow-lg shadow-amber-400/20">Book Premium Package</a>
       </div>
 
-      <!-- Digital Growth -->
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-400/50 transition-all">
+      <!-- Digital Growth 45 Days -->
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-amber-400/50 transition-all">
         <div>
-          <span class="text-xs font-semibold text-amber-400 uppercase tracking-widest">Optimization</span>
-          <h3 class="text-xl font-bold text-white mt-1">Digital Growth (45 Days)</h3>
+          <span class="text-[10px] font-extrabold text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full uppercase tracking-wider">SEO Sprint</span>
+          <h3 class="text-xl font-bold text-white mt-3">Digital Growth (45 Days)</h3>
           <p class="text-3xl font-black text-white mt-4">₹4,500</p>
-          <ul class="mt-6 space-y-3 text-sm text-slate-300">
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Continuous Google Page Monitoring</li>
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Detailed Performance Reports</li>
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Search Rankings Growth Tactics</li>
+          <p class="text-xs text-slate-400 mt-1 mb-6">Sustained optimization to capture local keywords.</p>
+
+          <ul class="space-y-3 text-sm text-slate-300 border-t border-slate-800 pt-6">
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Continuous Google Business Page Monitoring</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Weekly Performance & Impression Audit Reports</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Targeted Local Search Ranking Growth Tactics</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Competitor Keyword Gap Analysis</li>
           </ul>
         </div>
-        <a href="https://wa.me/917799423794?text=Hi%2C%20I%20am%20interested%20in%20Digital%20Growth%2045%20Days%20(%E2%82%B94500)" target="_blank" class="mt-8 bg-slate-800 hover:bg-amber-400 hover:text-slate-950 text-white font-bold py-3 rounded-xl transition-all text-center text-sm block">Book Package</a>
+        <a href="https://wa.me/917799423794?text=Hi%2C%20I%20am%20interested%20in%20Digital%20Growth%2045%20Days%20(%E2%82%B94500)" target="_blank" class="mt-8 bg-slate-800 hover:bg-amber-400 hover:text-slate-950 text-white font-bold py-3.5 rounded-xl transition-all text-center text-sm block">Start Growth Sprint</a>
       </div>
 
-      <!-- Paid Ads -->
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-400/50 transition-all">
+      <!-- Paid Advertising -->
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-amber-400/50 transition-all">
         <div>
-          <span class="text-xs font-semibold text-amber-400 uppercase tracking-widest">Paid Traffic</span>
-          <h3 class="text-xl font-bold text-white mt-1">Google & Meta Ads</h3>
-          <p class="text-3xl font-black text-white mt-4"><span class="text-sm font-normal text-slate-400">Starting from</span> ₹3,000</p>
-          <ul class="mt-6 space-y-3 text-sm text-slate-300">
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Meta Ads Setup & Monitoring (from ₹3,000)</li>
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Google Ads Setup & Monitoring (from ₹6,000)</li>
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Targeted Local Lead Generation</li>
+          <span class="text-[10px] font-extrabold text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full uppercase tracking-wider">Paid Traffic</span>
+          <h3 class="text-xl font-bold text-white mt-3">Google & Meta Lead Ads</h3>
+          <p class="text-3xl font-black text-white mt-4"><span class="text-xs font-normal text-slate-400">Starting from</span> ₹3,000</p>
+          <p class="text-xs text-slate-400 mt-1 mb-6">Drive instant targeted leads in your specific PIN code.</p>
+
+          <ul class="space-y-3 text-sm text-slate-300 border-t border-slate-800 pt-6">
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> <strong>Meta Ads Setup & Campaign Mgmt:</strong> ₹3,000</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> <strong>Google Search Ads Setup & Mgmt:</strong> ₹6,000</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Direct WhatsApp Lead Routing Setup</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Hyper-Local Geo-Fencing Ad Strategy</li>
           </ul>
         </div>
-        <a href="https://wa.me/917799423794?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Google%20and%20Meta%20Ads" target="_blank" class="mt-8 bg-slate-800 hover:bg-amber-400 hover:text-slate-950 text-white font-bold py-3 rounded-xl transition-all text-center text-sm block">Book Package</a>
+        <a href="https://wa.me/917799423794?text=Hi%2C%20I%20want%20to%20know%20more%20about%20Google%20and%20Meta%20Ads" target="_blank" class="mt-8 bg-slate-800 hover:bg-amber-400 hover:text-slate-950 text-white font-bold py-3.5 rounded-xl transition-all text-center text-sm block">Setup Lead Ads</a>
       </div>
 
       <!-- Website Building -->
-      <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between hover:border-amber-400/50 transition-all">
+      <div class="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 flex flex-col justify-between hover:border-amber-400/50 transition-all">
         <div>
-          <span class="text-xs font-semibold text-amber-400 uppercase tracking-widest">Web Development</span>
-          <h3 class="text-xl font-bold text-white mt-1">Website Building</h3>
-          <p class="text-3xl font-black text-white mt-4"><span class="text-sm font-normal text-slate-400">Starting from</span> ₹3,000</p>
-          <ul class="mt-6 space-y-3 text-sm text-slate-300">
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Mobile Friendly Fast-Track Site</li>
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> Integrated Local SEO</li>
-            <li class="flex items-center"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2"></i> AI-Powered Lead Capture Tools</li>
+          <span class="text-[10px] font-extrabold text-amber-400 bg-amber-400/10 px-3 py-1 rounded-full uppercase tracking-wider">Web Development</span>
+          <h3 class="text-xl font-bold text-white mt-3">Website Building</h3>
+          <p class="text-3xl font-black text-white mt-4"><span class="text-xs font-normal text-slate-400">Starting from</span> ₹3,000</p>
+          <p class="text-xs text-slate-400 mt-1 mb-6">High-speed, conversion-focused mobile landing page.</p>
+
+          <ul class="space-y-3 text-sm text-slate-300 border-t border-slate-800 pt-6">
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Mobile-First Fast-Track Landing Page</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Integrated On-Page Local SEO Signals</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Embedded AI Assistants & Maps Lead Funnel</li>
+            <li class="flex items-start"><i data-lucide="check-circle-2" class="w-4 h-4 text-amber-400 mr-2 mt-0.5 flex-shrink-0"></i> Free Hosting Configuration on GitHub Pages</li>
           </ul>
         </div>
-        <a href="https://wa.me/917799423794?text=Hi%2C%20I%20am%20interested%20in%20Website%20Building%20services" target="_blank" class="mt-8 bg-slate-800 hover:bg-amber-400 hover:text-slate-950 text-white font-bold py-3 rounded-xl transition-all text-center text-sm block">Book Package</a>
+        <a href="https://wa.me/917799423794?text=Hi%2C%20I%20am%20interested%20in%20Website%20Building%20services" target="_blank" class="mt-8 bg-slate-800 hover:bg-amber-400 hover:text-slate-950 text-white font-bold py-3.5 rounded-xl transition-all text-center text-sm block">Build Website</a>
       </div>
 
     </div>
@@ -208,31 +312,31 @@
   <section id="lead-form" class="py-20 bg-slate-900 border-t border-slate-800">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
-        <h2 class="text-3xl font-bold text-white">Get a Free Local Audit & Call</h2>
-        <p class="text-slate-400 mt-2">Fill in your details below to route directly to our team via WhatsApp.</p>
+        <h2 class="text-3xl font-bold text-white">Get a Free Local Audit & Consultation</h2>
+        <p class="text-slate-400 mt-2 text-sm sm:text-base">Fill in your details below to connect directly with our team on WhatsApp.</p>
       </div>
 
-      <form onsubmit="submitLeadForm(event)" class="space-y-4 bg-slate-950 p-8 rounded-2xl border border-slate-800 shadow-xl">
+      <form onsubmit="submitLeadForm(event)" class="space-y-4 bg-slate-950 p-6 sm:p-8 rounded-3xl border border-slate-800 shadow-xl">
         <div>
           <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Business Name</label>
-          <input type="text" id="lead-name" required placeholder="Your Business Name" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-400 text-sm">
+          <input type="text" id="lead-name" required placeholder="e.g. SP Digital Hub" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-400 text-sm">
         </div>
         <div>
-          <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Phone Number</label>
+          <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Phone / WhatsApp Number</label>
           <input type="tel" id="lead-phone" required placeholder="10 Digit Mobile Number" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-400 text-sm">
         </div>
         <div>
-          <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Service Needed</label>
+          <label class="block text-xs font-semibold uppercase text-slate-400 mb-1">Service Required</label>
           <select id="lead-service" class="w-full bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-400 text-sm">
             <option>Google Business Profile Setup (₹3000)</option>
             <option>Google Photoshoot Basic (₹3000)</option>
             <option>Google Photoshoot Premium (₹9999)</option>
             <option>Digital Growth 45 Days (₹4500)</option>
-            <option>Google / Meta Ads</option>
+            <option>Google / Meta Paid Ads</option>
             <option>Website Building</option>
           </select>
         </div>
-        <button type="submit" class="w-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold py-4 rounded-xl text-base transition-all flex items-center justify-center space-x-2">
+        <button type="submit" class="w-full bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold py-4 rounded-xl text-base transition-all flex items-center justify-center space-x-2 shadow-lg shadow-amber-400/20">
           <i data-lucide="send" class="w-5 h-5"></i>
           <span>Submit & Connect on WhatsApp</span>
         </button>
@@ -242,16 +346,16 @@
 
   <!-- Footer -->
   <footer id="contact" class="bg-slate-950 py-12 border-t border-slate-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left grid sm:grid-cols-2 gap-8 items-center">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid sm:grid-cols-2 gap-8 items-center text-center sm:text-left">
       <div>
-        <div class="flex items-center justify-center sm:justify-start space-x-3 mb-2">
-          <div class="w-8 h-8 rounded-full bg-amber-400 flex items-center justify-center text-slate-950 font-black text-base">📍</div>
+        <div class="flex items-center justify-center sm:justify-start space-x-3 mb-3">
+          <img src="logo.png" alt="The Local Signal Logo" class="w-8 h-8 rounded-full border border-amber-400 object-cover">
           <span class="text-base font-bold text-white">THE LOCAL SIGNAL</span>
         </div>
         <p class="text-xs text-slate-500">Ex-Google Maps Team (2007 Pilot Batch) | SPDigitalJourney</p>
       </div>
 
-      <div class="space-y-2 text-sm text-slate-400 text-center sm:text-right">
+      <div class="space-y-2 text-xs sm:text-sm text-slate-400 text-center sm:text-right">
         <p><i data-lucide="phone" class="w-4 h-4 inline mr-1 text-amber-400"></i> +91 7799423794</p>
         <p><i data-lucide="mail" class="w-4 h-4 inline mr-1 text-amber-400"></i> rpsanjaypaul@gmail.com</p>
         <p><a href="https://whatsapp.com/channel/0029Vb8E8PaHQbS9C44pDx3B" target="_blank" class="text-amber-400 hover:underline inline-flex items-center"><i data-lucide="radio" class="w-4 h-4 mr-1"></i> Join WhatsApp Channel</a></p>
@@ -259,10 +363,27 @@
     </div>
   </footer>
 
+  <!-- Persistent Mobile Bottom WhatsApp Bar -->
+  <div class="fixed bottom-0 inset-x-0 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 p-3 sm:hidden z-40 flex items-center justify-between">
+    <div class="flex items-center space-x-2">
+      <img src="logo.png" alt="Logo" class="w-8 h-8 rounded-full border border-amber-400">
+      <span class="text-xs font-bold text-white">The Local Signal</span>
+    </div>
+    <a href="https://wa.me/917799423794?text=Hi%2C%20I%20want%20to%20grow%20my%20business%20on%20Google%20Maps" target="_blank" class="bg-amber-400 text-slate-950 font-bold px-4 py-2 rounded-xl text-xs flex items-center space-x-1.5">
+      <i data-lucide="message-circle" class="w-4 h-4"></i>
+      <span>WhatsApp Us</span>
+    </a>
+  </div>
+
   <!-- Scripts -->
   <script>
     // Initialize Lucide Icons
     lucide.createIcons();
+
+    // Modal Controls
+    function closeModal() {
+      document.getElementById('welcome-modal').classList.add('hidden');
+    }
 
     // Simulated AI Maps Audit
     function handleAiQuery(e) {
@@ -272,12 +393,12 @@
       const text = input.value.trim();
       if (!text) return;
 
-      window.innerHTML += `<div class="bg-amber-400/10 border border-amber-400/20 p-3 rounded-lg text-amber-300 text-right ml-auto max-w-[85%]">👤 <strong>You:</strong> ${text}</div>`;
+      window.innerHTML += `<div class="bg-amber-400/10 border border-amber-400/20 p-3 rounded-xl text-amber-300 text-right ml-auto max-w-[85%]">👤 <strong>You:</strong> ${text}</div>`;
       input.value = '';
       window.scrollTop = window.scrollHeight;
 
       setTimeout(() => {
-        window.innerHTML += `<div class="bg-slate-800/80 p-3 rounded-lg text-slate-300 max-w-[85%]">🤖 <strong>AI Assistant:</strong> Based on 2007+ Google Maps ranking factors for "${text}", your primary growth levers are: 1. Verification & Category Tuning 2. 360-degree Geo-tagged Photos 3. Active Review Velocity. <a href="https://wa.me/917799423794?text=Hi%2C%20I%20just%20ran%20an%20AI%20audit%20for%20${encodeURIComponent(text)}" class="text-amber-400 underline font-bold block mt-1">Click here to claim your full audit report on WhatsApp.</a></div>`;
+        window.innerHTML += `<div class="bg-slate-800/80 p-3 rounded-xl text-slate-300 max-w-[85%]">🤖 <strong>AI Assistant:</strong> Analysis for "${text}" completed! Key levers for ranking: 1. Phone & Category Verification 2. High-Res 360° Visuals 3. Strategic Review Velocity. <a href="https://wa.me/917799423794?text=Hi%2C%20I%20ran%20an%20AI%20audit%20for%20${encodeURIComponent(text)}" class="text-amber-400 font-bold underline block mt-1">Claim full audit report on WhatsApp →</a></div>`;
         window.scrollTop = window.scrollHeight;
       }, 800);
     }
@@ -289,7 +410,7 @@
       const phone = document.getElementById('lead-phone').value;
       const service = document.getElementById('lead-service').value;
 
-      const message = `Hi! New Lead Details:%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}\%0AService Requested:${encodeURIComponent(service)}`;
+      const message = `Hi! New Lead Details:%0AName: ${encodeURIComponent(name)}%0APhone: ${encodeURIComponent(phone)}%0AService Requested: ${encodeURIComponent(service)}`;
       window.open(`https://wa.me/917799423794?text=${message}`, '_blank');
     }
   </script>
